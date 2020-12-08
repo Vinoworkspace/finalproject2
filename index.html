@@ -16,9 +16,6 @@
 
     <link rel="stylesheet" href="style.css" type="text/css" />
 
-    
-    <link rel="stylesheet" href="script.js" type="text/javascript" />
-
     <!-- <link rel="addnewtask" href="addnewtask.html" type="text/html"> -->
 
     <title>Task Planner</title>
@@ -49,7 +46,7 @@
         </div>
       </div>
 
-      <div class="btn-group" role="group" aria-label="Basic example">
+      <div class="btn-group myadd" role="group" aria-label="Basic example">
         <!-- Button trigger modal -->
         <button
           type="button"
@@ -82,68 +79,87 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Task Name</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-                <small id="text" class="form-text text-muted"></small>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Description</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleInputPassword1"
-                />
-                <small id="text" class="form-text text-muted"></small>
-              </div>
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Assigned to
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Vino</a>
-                  <a class="dropdown-item" href="#">Josh</a>
-                </div>
-              </div>
-              <br />
+            <span class="border">
+              <form>
+                <div class="myadd">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Task Name:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                    <small id="text" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Description:</label>
+                    <input
+                      type="text"
+                      class="form-control description"
+                      id="exampleInputPassword1"
+                    />
+                    <small id="text" class="form-text text-muted"></small>
+                  </div>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Assigned to
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a class="dropdown-item" href="#">Vino</a>
+                      <a class="dropdown-item" href="#">Josh</a>
+                    </div>
+                  </div>
+                  <br />
 
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Status
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">To Do</a>
-                  <a class="dropdown-item" href="#">In Progress</a>
-                  <a class="dropdown-item" href="#">Done</a>
-                  <a class="dropdown-item" href="#">Review</a>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Status
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a class="dropdown-item" href="#">To Do</a>
+                      <a class="dropdown-item" href="#">In Progress</a>
+                      <a class="dropdown-item" href="#">Done</a>
+                      <a class="dropdown-item" href="#">Review</a>
+                    </div>
+                  </div>
+                  <br />
+                  <label class="control-label" for="date">Date:</label>
+                  <input
+                    class="datewidth"
+                    class="form-control"
+                    id="date"
+                    name="date"
+                    placeholder="MM/DD/YYYY"
+                    type="text"
+                  />
+                  <br />
                 </div>
-              </div>
-              <br />
-
-              <!-- <button type="submit" class="btn btn-secondary">Date:</button> -->
-              <!-- <button type="button" class="btn btn-secondary btn-sm">Date</button> -->
-              <!-- <button type="button" class="btn btn-outline-secondary">Secondary</button> -->
-            </form>
+                <!-- <button type="submit" class="btn btn-secondary">Date:</button> -->
+                <!-- <button type="button" class="btn btn-secondary btn-sm">Date</button> -->
+                <!-- <button type="button" class="btn btn-outline-secondary">Secondary</button> -->
+              </form>
+            </span>
             <!-- <div class="modal-body">Task Name</div> -->
             <div class="modal-footer">
               <button
@@ -175,86 +191,127 @@
               </p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">Josh - Review</small>
-              <div class="btn-wrapper text-center" href=>
+              <small class="text-muted"
+                >Josh - Review
+                <button class="btn btn-primary btn-sm" type="button">
+                  Edit
+                </button>
+                <button class="btn btn-danger btn-sm" type="button">
+                  Delete
+                </button>
+              </small>
+              <!-- <div class="btn-wrapper text-center" href=>
               <a class="btn btn-primary">Edit</a>
               <a class="btn btn-danger">Delete</a>
+            </div> -->
             </div>
           </div>
-        </div>
-        <div class="card pr-2">
-          <div class="card-body">
-            <h5 class="card-title"><strong>Buy Groceries</strong></h5>
-            <p class="card-text">
-              Buy groceries in woolies, coles and Aldi.
-              <br />
-              <br />
-              Due Date: 25/12/2020
-            </p>
-          </div>
+          <div class="card pr-2">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Buy Groceries</strong></h5>
+              <p class="card-text">
+                Buy groceries in woolies, coles and Aldi.
+                <br />
+                <br />
+                Due Date: 25/12/2020
+              </p>
+            </div>
 
-          <div class="card-footer">
-            <small class="text-muted">Vino - In Progress</small>
-            <div class="btn-wrapper text-center">
+            <div class="card-footer">
+              <small class="text-muted"
+                >Vino-In Progress
+                <button class="btn btn-primary btn-sm" type="button">
+                  Edit
+                </button>
+                <button class="btn btn-danger btn-sm" type="button">
+                  Delete
+                </button>
+              </small>
+              <!-- <div class="btn-wrapper text-center">
               <a class="btn btn-primary">Edit</a>
               <a class="btn btn-danger">Delete</a>
+            </div> -->
             </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><strong>Piano Lessons</strong></h5>
-            <p class="card-text">
-              Planning to go piano lessons on weekends.
-              <br />
-              <br />
-              Due date: 30/11/2020
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Josh - To Do</small>
-            <div class="btn-wrapper text-center">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Piano Lessons</strong></h5>
+              <p class="card-text">
+                Planning to go piano lessons on weekends.
+                <br />
+                <br />
+                Due date: 30/11/2020
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"
+                >Josh - To Do
+                <button class="btn btn-primary btn-sm" type="button">
+                  Edit
+                </button>
+                <button class="btn btn-danger btn-sm" type="button">
+                  Delete
+                </button>
+              </small>
+              <!-- <div class="btn-wrapper text-center">
               <a class="btn btn-primary">Edit</a>
               <a class="btn btn-danger">Delete</a>
+            </div> -->
             </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><strong>Go to Gym</strong></h5>
-            <p class="card-text">
-              Start gym at 3pm and workout for 1 hour.
-              <br />
-              <br />
-              Due date: 02/12/2020
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Josh - To Do</small>
-            <div class="btn-wrapper text-center">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Go to Gym</strong></h5>
+              <p class="card-text">
+                Start gym at 3pm and workout for 1 hour.
+                <br />
+                <br />
+                Due date: 02/12/2020
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"
+                >Josh - To Do
+                <button class="btn btn-primary btn-sm" type="button">
+                  Edit
+                </button>
+                <button class="btn btn-danger btn-sm" type="button">
+                  Delete
+                </button>
+              </small>
+              <!-- <div class="btn-wrapper text-center">
               <a class="btn btn-primary">Edit</a>
               <a class="btn btn-danger">Delete</a>
+
             </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><strong>Pay Rent</strong></h5>
-            <p class="card-text">
-              Have to pay rent before next wednesday.
-              <br />
-              <br />
-              Due Date: 01/12/2020
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Josh - To Do</small>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Pay Rent</strong></h5>
+              <p class="card-text">
+                Have to pay rent before next wednesday.
+                <br />
+                <br />
+                Due Date: 01/12/2020
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"
+                >Josh - To Do
+                <button class="btn btn-primary btn-sm" type="button">
+                  Edit
+                </button>
+                <button class="btn btn-danger btn-sm" type="button">
+                  Delete
+                </button>
+              </small>
 
-            <div class="btn-wrapper text-center">
+              <!-- <div class="btn-wrapper text-center">
               <a class="btn btn-primary">Edit</a>
-              <a class="btn btn-danger">Delete</a>
+              <a class="btn btn-primary">Delete</a>
+            </div> -->
             </div>
           </div>
         </div>
@@ -286,7 +343,5 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
-
   </body>
 </html>

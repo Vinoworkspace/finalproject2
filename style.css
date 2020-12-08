@@ -13,3 +13,12 @@ h1 {
   font-size: 3em;
   color: rgb(27, 25, 25);
 }
+
+ .myadd
+ {
+   margin: 1rem;
+ }
+ .description
+ {
+   height: 6em;
+ }
