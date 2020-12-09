@@ -3,8 +3,6 @@ body {
   font-size: 15px;
   padding: 12px;
   margin: 12px;
-  
- 
 }
 header {
   text-align: center;
@@ -16,5 +14,43 @@ h1 {
   color: rgb(27, 25, 25);
 }
 
-
+.myadd {
+  margin: 1rem;
 }
+
+.mystatus {
+  width: auto;
+}
+
+.button1 {
+  float: right;
+  position: relative;
+  top: -70px;
+}
+
+/* .btncolor1 { */
+  /* background-color: rgb(123, 255, 163); */
+  /* border-radius: 20px;
+} */
+
+/* .btncolor2 { */
+  /* background-color: lightcoral; */
+  /* border-radius: 20px;
+} */
+
+/* .cardlayout {
+  border-radius: 20px;
+} */
+/* .taskborder {
+  width: 50%;
+} */
+/* .boxassigned {
+  width: 50%;
+}
+.boxstatus {
+  width: 50%;
+} */
+
+
+
+

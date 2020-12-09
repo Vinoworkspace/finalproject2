@@ -16,9 +16,9 @@
 
     <link rel="stylesheet" href="style.css" type="text/css" />
 
-    <link rel="stylesheet" href="script.js" type="text/js" />
+    <!-- JS -->
 
-    <!-- <link rel="addnewtask" href="addnewtask.html" type="text/html"> -->
+    <link rel="stylesheet" href="index.js" type="text/js" />
 
     <title>Task Planner</title>
   </head>
@@ -56,7 +56,7 @@
         </button>
       </div>
 
-      <!-- Modal -->
+      <!-- ADD NEW TASK Modal -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -91,22 +91,48 @@
                     <small id="text" class="form-text text-muted"></small>
                   </div>
                   <div class="form-group">
+                    <label for="exampleFormControlTextarea1"
+                      >Description:
+                    </label>
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail2">Assigned to:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail2"
+                      aria-describedby="emailHelp"
+                    />
+                    <small id="text" class="form-text text-muted"></small>
+                  </div>
 
-                  <label class="control-label" for="date">Date:</label>
-                  <input
-                    class="datewidth"
-                    class="form-control"
-                    id="date"
-                    name="date"
-                    placeholder="MM/DD/YYYY"
-                    type="text"
-                  />
-                  <br />
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Status</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>To Do</option>
+                      <option>In Progress</option>
+                      <option>Done</option>
+                      <option>Review</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="addDate">Date:</label>
+                    <input
+                      class="form-control"
+                      id="addDate"
+                      name="date"
+                      placeholder="MM/DD/YYYY"
+                      type="text"
+                    />
+                  </div>
                 </div>
-
               </form>
             </span>
-            <!-- <div class="modal-body">Task Name</div> -->
             <div class="modal-footer">
               <button
                 type="button"
@@ -126,9 +152,11 @@
           </div>
         </div>
       </div>
+      <!-- END NEW TASK Modal -->
       <br />
       <br />
 
+      <div class="mt-5">
         <div class="card-deck">
           <div class="card pr-2">
             <div class="card-body">
@@ -137,23 +165,24 @@
                 Do some research to find the best Football Club.
                 <br />
                 <br />
-                Due date: 28/12/2020
+                Due Date: 28/12/2020
               </p>
             </div>
             <div class="card-footer">
               <small class="text-muted"
                 >Josh - Review
-
+                <button
+                  class="btn btn-primary btn-sm"
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#exampleModalLong"
+                >
                   Edit
                 </button>
                 <button class="btn btn-danger btn-sm" type="button">
                   Delete
                 </button>
               </small>
-              <!-- <div class="btn-wrapper text-center" href=>
-              <a class="btn btn-primary">Edit</a>
-              <a class="btn btn-danger">Delete</a>
-            </div> -->
             </div>
           </div>
           <div class="card pr-2">
@@ -177,10 +206,6 @@
                   Delete
                 </button>
               </small>
-              <!-- <div class="btn-wrapper text-center">
-              <a class="btn btn-primary">Edit</a>
-              <a class="btn btn-danger">Delete</a>
-            </div> -->
             </div>
           </div>
           <div class="card">
@@ -190,7 +215,7 @@
                 Planning to go piano lessons on weekends.
                 <br />
                 <br />
-                Due date: 30/11/2020
+                Due Date: 30/11/2020
               </p>
             </div>
             <div class="card-footer">
@@ -203,10 +228,6 @@
                   Delete
                 </button>
               </small>
-              <!-- <div class="btn-wrapper text-center">
-              <a class="btn btn-primary">Edit</a>
-              <a class="btn btn-danger">Delete</a>
-            </div> -->
             </div>
           </div>
 
@@ -217,7 +238,7 @@
                 Start gym at 3pm and workout for 1 hour.
                 <br />
                 <br />
-                Due date: 02/12/2020
+                Due Date: 02/12/2020
               </p>
             </div>
             <div class="card-footer">
@@ -253,13 +274,108 @@
                   Delete
                 </button>
               </small>
-
             </div>
           </div>
         </div>
       </div>
+      <!-- EDIT Modal Task start -->
+      <div
+        class="modal fade"
+        id="exampleModalLong"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Edit task</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container myformstyle">
+                <form>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Task name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="formGroupExampleInput"
+                      placeholder="Task"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1"
+                      >Description:
+                    </label>
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="editTaskEmail">Assigned to: </label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="editTaskEmail"
+                      aria-describedby="emailHelp"
+                    />
+                    <small id="text" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Status</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>To Do</option>
+                      <option>In Progress</option>
+                      <option>Done</option>
+                      <option>Review</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="editTaskDate">Date:</label>
+                    <input
+                      class="form-control"
+                      id="editTaskDate"
+                      name="date"
+                      placeholder="MM/DD/YYYY"
+                      type="text"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Update
+              </button>
+              <br />
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Edit Task Modal End -->
     </main>
-    <br />
     <br />
     <br />
     <br />
@@ -285,6 +401,6 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
