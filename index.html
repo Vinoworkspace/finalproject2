@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="style.css" type="text/css" />
 
+    <link rel="stylesheet" href="script.js" type="text/js" />
+
     <!-- <link rel="addnewtask" href="addnewtask.html" type="text/html"> -->
 
     <title>Task Planner</title>
@@ -27,23 +29,14 @@
       </section>
     </header>
     <main class="finalproject">
-      <div class="btn-group">
-        <button
-          type="button"
-          class="btn btn-success dropdown-toggle"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Status
-        </button>
-
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">To Do</a>
-          <a class="dropdown-item" href="#">In Progress</a>
-          <a class="dropdown-item" href="#">Done</a>
-          <a class="dropdown-item" href="#">Review</a>
-        </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1"> <strong>Status</strong></label>
+        <select class="form-control mystatus" id="exampleFormControlSelect1">
+          <option>To Do</option>
+          <option>In Progress</option>
+          <option>Done</option>
+          <option>Review</option>
+        </select>
       </div>
 
       <div
@@ -52,6 +45,7 @@
         aria-label="Basic example"
       >
         <!-- Button trigger modal -->
+
         <button
           type="button"
           class="btn btn-success"
@@ -97,57 +91,7 @@
                     <small id="text" class="form-text text-muted"></small>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Description:</label>
-                    <input
-                      type="text"
-                      class="form-control description"
-                      id="exampleInputPassword1"
-                    />
-                    <small id="text" class="form-text text-muted"></small>
-                  </div>
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Assigned to
-                    </button>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item" href="#">Vino</a>
-                      <a class="dropdown-item" href="#">Josh</a>
-                    </div>
-                  </div>
-                  <br />
 
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Status
-                    </button>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item" href="#">To Do</a>
-                      <a class="dropdown-item" href="#">In Progress</a>
-                      <a class="dropdown-item" href="#">Done</a>
-                      <a class="dropdown-item" href="#">Review</a>
-                    </div>
-                  </div>
-                  <br />
                   <label class="control-label" for="date">Date:</label>
                   <input
                     class="datewidth"
@@ -159,9 +103,7 @@
                   />
                   <br />
                 </div>
-                <!-- <button type="submit" class="btn btn-secondary">Date:</button> -->
-                <!-- <button type="button" class="btn btn-secondary btn-sm">Date</button> -->
-                <!-- <button type="button" class="btn btn-outline-secondary">Secondary</button> -->
+
               </form>
             </span>
             <!-- <div class="modal-body">Task Name</div> -->
@@ -186,9 +128,7 @@
       </div>
       <br />
       <br />
-      <br />
-      <br />
-      <div class="mt-5 d-flex flex-wrap">
+
         <div class="card-deck">
           <div class="card pr-2">
             <div class="card-body">
@@ -203,12 +143,7 @@
             <div class="card-footer">
               <small class="text-muted"
                 >Josh - Review
-                <button
-                  class="btn btn-primary btn-sm"
-                  data-toggle="modal"
-                  data-target="#exampleModalLong"
-                  type="button"
-                >
+
                   Edit
                 </button>
                 <button class="btn btn-danger btn-sm" type="button">
@@ -318,143 +253,7 @@
                   Delete
                 </button>
               </small>
-            </div>
-          </div>
-          <!-- Modal start -->
-          <div
-            class="modal fade"
-            id="exampleModalLong"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog" role="document">
-              <div class="modal-content cardlayout">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">
-                    Edit task
-                  </h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container myformstyle">
-                    <br />
-                    <!-- <form> -->
-                    <br />
-                    <div class="taskborder editborder">
-                      <div class="form-group taskborder">
-                        <label for="formGroupExampleInput">Task name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="formGroupExampleInput"
-                          placeholder="Task"
-                        />
-                      </div>
-                      <label for="formGroupExampleInput">Description</label>
-                      <br />
-                      <div class="textarea">
-                        <textarea name="text" rows="5" cols="24" wrap="soft">
-                        </textarea>
-                      </div>
-                    </div>
-                    <br />
-                    <div class="form-group boxassigned">
-                      <label for="exampleInputEmail1">Assigned to: </label>
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                      />
-                      <small id="text" class="form-text text-muted"></small>
-                    </div>
-                    <!-- <select class="form-controlform-control-lg myselect">
-                      <option>Assigned to</option>
-                      <option value="Josh">Josh</option>
-                      <option value="Vino">Vino</option>
-                    </select> -->
-                    <br />
 
-                    <div class="form-group boxstatus">
-                      <label for="exampleFormControlSelect1">Status</label>
-                      <select
-                        class="form-control"
-                        id="exampleFormControlSelect1"
-                      >
-                        <option>To Do</option>
-                        <option>In Progress</option>
-                        <option>Done</option>
-                        <option>Review</option>
-                      </select>
-                    </div>
-                    <!-- <select class="form-control statusbar">
-                      <option>Status option</option>
-                      <option value="Todo">To do</option>
-                      <option value="Inprogress">In progress</option>
-                      <option value="Review">Review</option>
-                      <option value="Done">Done</option> -->
-                    <!-- </select> -->
-                    <br />
-                    <div class="bootstrap-iso">
-                      <div class="container-fluid">
-                        <div class="row">
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <!-- Form code begins -->
-                            <form method="post">
-                              <div class="form-group">
-                                <!-- Date input -->
-                                <label class="control-label" for="date"></label>
-                                <input
-                                  class="datewidth"
-                                  class="form-control"
-                                  id="date"
-                                  name="date"
-                                  placeholder="MM/DD/YYY"
-                                  type="text"
-                                />
-                              </div>
-                            </form>
-                            <br />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary btncolor1"
-                    data-dismiss="modal"
-                  >
-                    Update
-                  </button>
-                  <br />
-                  <br />
-                  <button
-                    type="button"
-                    class="btn btn-primary btncolor2"
-                    data-dismiss="modal"
-                  >
-                    Cancel
-                  </button>
-                  <!-- <div class="btn-wrapper text-center">
-                        <a class="btn btn-primary">Edit</a>
-                        <a class="btn btn-primary">Delete</a>
-                      </div> -->
-
-                  <!-- Modal End -->
-                </div>
-              </div>
             </div>
           </div>
         </div>
