@@ -1,8 +1,10 @@
- body {
+body {
   background-color: rgb(212, 231, 231);
   font-size: 15px;
   padding: 12px;
   margin: 12px;
+  
+ 
 }
 header {
   text-align: center;
@@ -14,11 +16,18 @@ h1 {
   color: rgb(27, 25, 25);
 }
 
- .myadd
- {
-   margin: 1rem;
- }
- .description
- {
-   height: 6em;
- }
+.myadd {
+  margin: 1rem;
+}
+
+.mystatus {
+  width: auto;
+  
+}
+
+.button1
+{
+  float: right;
+  position: relative;
+ top: -70px;
+}

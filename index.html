@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="style.css" type="text/css" />
 
+    <link rel="stylesheet" href="script.js" type="text/js" />
+
     <!-- <link rel="addnewtask" href="addnewtask.html" type="text/html"> -->
 
     <title>Task Planner</title>
@@ -27,27 +29,23 @@
       </section>
     </header>
     <main class="finalproject">
-      <div class="btn-group">
-        <button
-          type="button"
-          class="btn btn-success dropdown-toggle"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Status
-        </button>
-
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">To Do</a>
-          <a class="dropdown-item" href="#">In Progress</a>
-          <a class="dropdown-item" href="#">Done</a>
-          <a class="dropdown-item" href="#">Review</a>
-        </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1"> <strong>Status</strong></label>
+        <select class="form-control mystatus" id="exampleFormControlSelect1">
+          <option>To Do</option>
+          <option>In Progress</option>
+          <option>Done</option>
+          <option>Review</option>
+        </select>
       </div>
 
-      <div class="btn-group myadd" role="group" aria-label="Basic example">
+      <div
+        class="btn-group myadd button1"
+        role="group"
+        aria-label="Basic example"
+      >
         <!-- Button trigger modal -->
+
         <button
           type="button"
           class="btn btn-success"
@@ -93,57 +91,37 @@
                     <small id="text" class="form-text text-muted"></small>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Description:</label>
+                    <label for="exampleFormControlTextarea1"
+                      >Description:
+                    </label>
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Assigned to:</label>
                     <input
-                      type="text"
-                      class="form-control description"
-                      id="exampleInputPassword1"
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
                     />
                     <small id="text" class="form-text text-muted"></small>
                   </div>
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Assigned to
-                    </button>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item" href="#">Vino</a>
-                      <a class="dropdown-item" href="#">Josh</a>
-                    </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Status</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>To Do</option>
+                      <option>In Progress</option>
+                      <option>Done</option>
+                      <option>Review</option>
+                    </select>
                   </div>
                   <br />
 
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Status
-                    </button>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item" href="#">To Do</a>
-                      <a class="dropdown-item" href="#">In Progress</a>
-                      <a class="dropdown-item" href="#">Done</a>
-                      <a class="dropdown-item" href="#">Review</a>
-                    </div>
-                  </div>
-                  <br />
                   <label class="control-label" for="date">Date:</label>
                   <input
                     class="datewidth"
@@ -155,9 +133,6 @@
                   />
                   <br />
                 </div>
-                <!-- <button type="submit" class="btn btn-secondary">Date:</button> -->
-                <!-- <button type="button" class="btn btn-secondary btn-sm">Date</button> -->
-                <!-- <button type="button" class="btn btn-outline-secondary">Secondary</button> -->
               </form>
             </span>
             <!-- <div class="modal-body">Task Name</div> -->
@@ -182,9 +157,9 @@
       </div>
       <br />
       <br />
-      <br />
-      <br />
-      <div class="coantainer mt-5">
+      <!-- <br /> -->
+      <!-- <br /> -->
+      <div class="mt-5">
         <div class="card-deck">
           <div class="card pr-2">
             <div class="card-body">
@@ -345,5 +320,6 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
