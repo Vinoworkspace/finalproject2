@@ -16,9 +16,9 @@
 
     <link rel="stylesheet" href="style.css" type="text/css" />
 
-    <link rel="stylesheet" href="script.js" type="text/js" />
+    <!-- JS -->
 
-    <!-- <link rel="addnewtask" href="addnewtask.html" type="text/html"> -->
+    <link rel="stylesheet" href="script.js" type="text/js" />
 
     <title>Task Planner</title>
   </head>
@@ -120,22 +120,19 @@
                       <option>Review</option>
                     </select>
                   </div>
-                  <br />
-
-                  <label class="control-label" for="addDate">Date:</label>
-                  <input
-                    class="datewidth"
-                    class="form-control"
-                    id="addDate"
-                    name="date"
-                    placeholder="MM/DD/YYYY"
-                    type="text"
-                  />
-                  <br />
+                  <div class="form-group">
+                    <label for="addDate">Date:</label>
+                    <input
+                      class="form-control"
+                      id="addDate"
+                      name="date"
+                      placeholder="MM/DD/YYYY"
+                      type="text"
+                    />
+                  </div>
                 </div>
               </form>
             </span>
-            <!-- <div class="modal-body">Task Name</div> -->
             <div class="modal-footer">
               <button
                 type="button"
@@ -155,10 +152,10 @@
           </div>
         </div>
       </div>
+      <!-- END NEW TASK Modal -->
       <br />
       <br />
-      <!-- <br /> -->
-      <!-- <br /> -->
+
       <div class="mt-5">
         <div class="card-deck">
           <div class="card pr-2">
@@ -186,10 +183,6 @@
                   Delete
                 </button>
               </small>
-              <!-- <div class="btn-wrapper text-center" href=>
-              <a class="btn btn-primary">Edit</a>
-              <a class="btn btn-danger">Delete</a>
-            </div> -->
             </div>
           </div>
           <div class="card pr-2">
@@ -206,22 +199,13 @@
             <div class="card-footer">
               <small class="text-muted"
                 >Vino - Done
-                <button
-                  class="btn btn-primary btn-sm"
-                  type="button"
-                  data-toggle="modal"
-                  data-target="#exampleModalLong"
-                >
+                <button class="btn btn-primary btn-sm" type="button">
                   Edit
                 </button>
                 <button class="btn btn-danger btn-sm" type="button">
                   Delete
                 </button>
               </small>
-              <!-- <div class="btn-wrapper text-center">
-              <a class="btn btn-primary">Edit</a>
-              <a class="btn btn-danger">Delete</a>
-            </div> -->
             </div>
           </div>
           <div class="card">
@@ -244,10 +228,6 @@
                   Delete
                 </button>
               </small>
-              <!-- <div class="btn-wrapper text-center">
-              <a class="btn btn-primary">Edit</a>
-              <a class="btn btn-danger">Delete</a>
-            </div> -->
             </div>
           </div>
 
@@ -294,16 +274,11 @@
                   Delete
                 </button>
               </small>
-
-              <!-- <div class="btn-wrapper text-center">
-              <a class="btn btn-primary">Edit</a>
-              <a class="btn btn-primary">Delete</a>
-            </div> -->
             </div>
           </div>
         </div>
       </div>
-      <!-- EDIT Modal start -->
+      <!-- EDIT Modal Task start -->
       <div
         class="modal fade"
         id="exampleModalLong"
@@ -327,7 +302,7 @@
             </div>
             <div class="modal-body">
               <div class="container myformstyle">
-                <div class="editborder">
+                <form>
                   <div class="form-group">
                     <label for="formGroupExampleInput">Task name:</label>
                     <input
@@ -337,7 +312,7 @@
                       placeholder="Task"
                     />
                   </div>
-                  <div class="form-group1">
+                  <div class="form-group">
                     <label for="exampleFormControlTextarea1"
                       >Description:
                     </label>
@@ -347,72 +322,36 @@
                       rows="3"
                     ></textarea>
                   </div>
-                  <!-- <label for="formGroupExampleInput">Description</label>
-                  <br />
-                  <div class="textarea">
-                    <textarea name="text" rows="3" cols="30" wrap="soft">
-                    </textarea>
-                  </div> -->
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail11">Assigned to: </label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail11"
-                    aria-describedby="emailHelp"
-                  />
-                  <small id="text" class="form-text text-muted"></small>
-                </div>
-                <!-- <select class="form-controlform-control-lg myselect">
-                      <option>Assigned to</option>
-                      <option value="Josh">Josh</option>
-                      <option value="Vino">Vino</option>
-                    </select> -->
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Status</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>To Do</option>
-                    <option>In Progress</option>
-                    <option>Done</option>
-                    <option>Review</option>
-                  </select>
-                </div>
-
-                <!-- <select class="form-control statusbar">
-                      <option>Status option</option>
-                      <option value="Todo">To do</option>
-                      <option value="Inprogress">In progress</option>
-                      <option value="Review">Review</option>
-                      <option value="Done">Done</option> -->
-                <!-- </select> -->
-                <div class="bootstrap-iso">
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <!-- Form code begins -->
-                        <form method="post">
-                          <div class="form-group">
-                            <!-- Date input -->
-
-                            <label class="control-label" for="editDate"
-                              ></label
-                            >
-                            <input
-                              class="datewidth"
-                              class="form-control"
-                              id="editDate"
-                              name="date"
-                              placeholder="MM/DD/YYYY"
-                              type="text"
-                            />
-                          </div>
-                        </form>
-                        <!-- <br /> -->
-                      </div>
-                    </div>
+                  <div class="form-group">
+                    <label for="editTaskEmail">Assigned to: </label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="editTaskEmail"
+                      aria-describedby="emailHelp"
+                    />
+                    <small id="text" class="form-text text-muted"></small>
                   </div>
-                </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Status</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>To Do</option>
+                      <option>In Progress</option>
+                      <option>Done</option>
+                      <option>Review</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="editTaskDate">Date:</label>
+                    <input
+                      class="form-control"
+                      id="editTaskDate"
+                      name="date"
+                      placeholder="MM/DD/YYYY"
+                      type="text"
+                    />
+                  </div>
+                </form>
               </div>
             </div>
             <div class="modal-footer">
@@ -424,7 +363,6 @@
                 Update
               </button>
               <br />
-
               <button
                 type="button"
                 class="btn btn-primary"
@@ -432,18 +370,12 @@
               >
                 Cancel
               </button>
-              <!-- <div class="btn-wrapper text-center">
-                        <a class="btn btn-primary">Edit</a>
-                        <a class="btn btn-primary">Delete</a>
-                      </div> -->
-
-              <!-- Modal End -->
             </div>
           </div>
         </div>
       </div>
+      <!-- Edit Task Modal End -->
     </main>
-    <br />
     <br />
     <br />
     <br />
