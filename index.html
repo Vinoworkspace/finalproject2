@@ -16,9 +16,7 @@
 
     <link rel="stylesheet" href="style.css" type="text/css" />
 
-    <!-- JS -->
 
-    <link rel="stylesheet" href="index.js" type="text/js" />
 
     <title>Task Planner</title>
   </head>
@@ -78,42 +76,61 @@
               </button>
             </div>
             <span class="border">
-              <form>
+              <form id="addNewTaskForm">
                 <div class="myadd">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Task Name:</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                    />
+                    <div
+                      id="alertMessageTaskName"
+                      style="display: none"
+                      class="alert alert-danger"
+                      role="alert"
+                    >
+                      Error message
+                    </div>
+                    <label for="addTaskName">Task Name:</label>
+                    <input type="text" class="form-control" id="addTaskName" />
                     <small id="text" class="form-text text-muted"></small>
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlTextarea1"
-                      >Description:
-                    </label>
+                    <div
+                      id="alertMessageDescription"
+                      style="display: none"
+                      class="alert alert-danger"
+                      role="alert"
+                    >
+                      Error message
+                    </div>
+                    <label for="addDescription">Description: </label>
                     <textarea
                       class="form-control"
-                      id="exampleFormControlTextarea1"
+                      id="addDescription"
                       rows="3"
                     ></textarea>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail2">Assigned to:</label>
+                    <div
+                      id="alertAssignedMessage"
+                      style="display: none"
+                      class="alert alert-danger"
+                      role="alert"
+                    >
+                      Error message
+                    </div>
+                    <label for="taskAssigned">Assigned to:</label>
                     <input
-                      type="email"
+                      type="text"
                       class="form-control"
-                      id="exampleInputEmail2"
+                      id="taskAssigned"
                       aria-describedby="emailHelp"
                     />
                     <small id="text" class="form-text text-muted"></small>
                   </div>
 
+
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Status</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <label for="taskStatus">Status</label>
+                    <select class="form-control" id="taskStatus">
+
                       <option>To Do</option>
                       <option>In Progress</option>
                       <option>Done</option>
@@ -121,19 +138,34 @@
                     </select>
                   </div>
                   <div class="form-group">
+
+                    <div
+                      id="alertDateMessage"
+                      style="display: none"
+                      class="alert alert-danger"
+                      role="alert"
+                    >
+                      Error message
+                    </div>
+
                     <label for="addDate">Date:</label>
                     <input
                       class="form-control"
                       id="addDate"
                       name="date"
-                      placeholder="MM/DD/YYYY"
-                      type="text"
+
+                      placeholder="dd-mm-yyyy"
+                      type="date"
                     />
                   </div>
                 </div>
+                <button type="submit" class="btn btn-primary float-right">
+                  Add
+                </button>
               </form>
             </span>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
+
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -142,139 +174,135 @@
                 Add
               </button>
               <button
-                type="button"
+                type="reset"
                 class="btn btn-primary"
                 data-dismiss="modal"
               >
-                Cancel
+                Reset
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <!-- END NEW TASK Modal -->
       <br />
-      <br />
 
-      <div class="mt-5">
-        <div class="card-deck">
-          <div class="card pr-2">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Join Football Club</strong></h5>
-              <p class="card-text">
-                Do some research to find the best Football Club.
-                <br />
-                <br />
-                Due Date: 28/12/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh - Review
-                <button
-                  class="btn btn-primary btn-sm"
-                  type="button"
-                  data-toggle="modal"
-                  data-target="#exampleModalLong"
-                >
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
-          </div>
-          <div class="card pr-2">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Buy Groceries</strong></h5>
-              <p class="card-text">
-                Buy groceries in woolies, coles and Aldi.
-                <br />
-                <br />
-                Due Date: 25/12/2020
-              </p>
-            </div>
+      <!-- <br /> -->
 
-            <div class="card-footer">
-              <small class="text-muted"
-                >Vino - Done
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
+      <div class="d-flex flex-wrap">
+        <div class="card mx-2 my-2" style="width: 14rem">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Join Football Club</strong></h5>
+            <p class="card-text">
+              Do some research to find the best Football Club.
+              <br />
+              <br />
+              Due Date: 28/12/2020
+            </p>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Piano Lessons</strong></h5>
-              <p class="card-text">
-                Planning to go piano lessons on weekends.
-                <br />
-                <br />
-                Due Date: 30/11/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh - Review
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              >Josh-Review
+              <button
+                class="btn btn-primary btn-sm"
+                type="button"
+                data-toggle="modal"
+                data-target="#exampleModalLong"
+              >
+                Edit
+              </button>
+              <button class="btn btn-danger btn-sm" type="button">
+                Delete
+              </button>
+            </small>
+          </div>
+        </div>
+        <div class="card mx-2 my-2" style="width: 14rem">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Buy Groceries</strong></h5>
+            <p class="card-text">
+              Buy groceries in woolies, coles and Aldi.
+              <br />
+              <br />
+              Due Date: 25/12/2020
+            </p>
+
           </div>
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Go to Gym</strong></h5>
-              <p class="card-text">
-                Start gym at 3pm and workout for 1 hour.
-                <br />
-                <br />
-                Due Date: 02/12/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh - To Do
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Pay Rent</strong></h5>
-              <p class="card-text">
-                Have to pay rent before next wednesday.
-                <br />
-                <br />
-                Due Date: 01/12/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh - To Do
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              >Vino-Done
+              <button class="btn btn-primary btn-sm" type="button">Edit</button>
+              <button class="btn btn-danger btn-sm" type="button">
+                Delete
+              </button>
+            </small>
+          </div>
+        </div>
+        <div class="card mx-2 my-2" style="width: 14rem">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Piano Lessons</strong></h5>
+            <p class="card-text">
+              Planning to go piano lessons on weekends.
+              <br />
+              <br />
+              Due Date: 30/11/2020
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              >Josh-Review
+              <button class="btn btn-primary btn-sm" type="button">Edit</button>
+              <button class="btn btn-danger btn-sm" type="button">
+                Delete
+              </button>
+            </small>
+
+          </div>
+        </div>
+
+
+        <div class="card mx-2 my-2" style="width: 14rem">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Go to Gym</strong></h5>
+            <p class="card-text">
+              Start gym at 3pm and workout for 1 hour.
+              <br />
+              <br />
+              Due Date: 02/12/2020
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              >Josh-To Do
+              <button class="btn btn-primary btn-sm" type="button">Edit</button>
+              <button class="btn btn-danger btn-sm" type="button">
+                Delete
+              </button>
+            </small>
+
+          </div>
+        </div>
+
+        <div class="card mx-2 my-2" style="width: 14rem">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Pay Rent</strong></h5>
+            <p class="card-text">
+              Have to pay rent before next wednesday.
+              <br />
+              <br />
+              Due Date: 01/12/2020
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              >Josh-To Do
+              <button class="btn btn-primary btn-sm" type="button">Edit</button>
+              <button class="btn btn-danger btn-sm" type="button">
+                Delete
+              </button>
+            </small>
           </div>
         </div>
       </div>
@@ -300,6 +328,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+
             <div class="modal-body">
               <div class="container myformstyle">
                 <form>
@@ -347,8 +376,8 @@
                       class="form-control"
                       id="editTaskDate"
                       name="date"
-                      placeholder="MM/DD/YYYY"
-                      type="text"
+                      placeholder="dd-mm-yyyy"
+                      type="date"
                     />
                   </div>
                 </form>
@@ -363,17 +392,15 @@
                 Update
               </button>
               <br />
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-dismiss="modal"
-              >
-                Cancel
+              <button type="reset" class="btn btn-primary" data-dismiss="modal">
+                Reset
               </button>
+
             </div>
           </div>
         </div>
       </div>
+
       <!-- Edit Task Modal End -->
     </main>
     <br />
@@ -401,6 +428,8 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+
+    <script src="js/index.js"></script>
+
   </body>
 </html>
