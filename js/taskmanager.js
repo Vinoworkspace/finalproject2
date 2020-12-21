@@ -100,7 +100,7 @@ const addTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
   // console.log("id: "+ id ) ;
 
   return `<li class="list-group-item" data-task-id="${id}">
-          <div class="card mx-2 my-2" style="width: 14rem">
+          <div class="card border" style="width: 14rem">
              <div class="card-body">
               <h5 class="card-title"><strong>${name}</strong></h5>
                
