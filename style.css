@@ -27,6 +27,15 @@ h1 {
   position: relative;
   top: -70px;
 }
+ul {
+    
+    padding-left: 0;
+}
+
+ul#taskList li {
+    display: inline-block;
+    margin-right: 10px;
+}
 
 /* .btncolor1 { */
   /* background-color: rgb(123, 255, 163); */
