@@ -16,8 +16,6 @@
 
     <link rel="stylesheet" href="style.css" type="text/css" />
 
-
-
     <title>Task Planner</title>
   </head>
   <body>
@@ -26,6 +24,24 @@
         <h1>Task Planner</h1>
       </section>
     </header>
+
+        
+     <div class="weather-container">
+       <br>
+       <h2>Sydney Weather Today</h2>
+      
+       
+       <img src = "" class="icon">
+       <p class ="weather"></p>
+       <p class ="temp"></p> 
+       <img class="img-syd" src="/images/sydney.jpg">
+     </div> 
+
+      
+
+     <br>
+    </br>
+
     <main class="finalproject">
       <div class="form-group">
         <label for="exampleFormControlSelect1"> <strong>Status</strong></label>
@@ -46,7 +62,7 @@
 
         <button
           type="button"
-          class="btn btn-success"
+          class="btn-color"
           data-toggle="modal"
           data-target="#exampleModal"
         >
@@ -126,11 +142,9 @@
                     <small id="text" class="form-text text-muted"></small>
                   </div>
 
-
                   <div class="form-group">
                     <label for="taskStatus">Status</label>
                     <select class="form-control" id="taskStatus">
-
                       <option>To Do</option>
                       <option>In Progress</option>
                       <option>Done</option>
@@ -138,7 +152,6 @@
                     </select>
                   </div>
                   <div class="form-group">
-
                     <div
                       id="alertDateMessage"
                       style="display: none"
@@ -153,7 +166,6 @@
                       class="form-control"
                       id="addDate"
                       name="date"
-
                       placeholder="dd-mm-yyyy"
                       type="date"
                     />
@@ -164,23 +176,7 @@
                 </button>
               </form>
             </span>
-            <!-- <div class="modal-footer">
-
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Add
-              </button>
-              <button
-                type="reset"
-                class="btn btn-primary"
-                data-dismiss="modal"
-              >
-                Reset
-              </button>
-            </div> -->
+            
           </div>
         </div>
       </div>
@@ -191,19 +187,19 @@
       <div id="addTaskDiv">
         <ul id="taskList"></ul>
         <div class="d-flex flex-wrap">
-          <div class="card mx-2 my-2" style="width: 14rem">
+          <div class="card border" style="width: 14rem">
             <div class="card-body">
-              <h5 class="card-title"><strong>Join Football Club</strong></h5>
+              <h5 class="card-title"><strong>(example)Task name</strong></h5>
               <p class="card-text">
-                Do some research to find the best Football Club.
+                Description
                 <br />
                 <br />
-                Due Date: 28/12/2020
+                Due Date: ##/##/##
               </p>
             </div>
             <div class="card-footer">
               <small class="text-muted"
-                >Josh-Review
+                >Name-Status
                 <button
                   class="btn btn-primary btn-sm"
                   type="button"
@@ -212,103 +208,13 @@
                 >
                   Edit
                 </button>
-                <button class="btn btn-danger btn-sm" type="button">
+                <button class="btn btn-danger delete-button" type="button">
                   Delete
                 </button>
               </small>
             </div>
           </div>
-          <!-- <div class="card mx-2 my-2" style="width: 14rem"> -->
-            <!-- <div class="card-body">
-              <h5 class="card-title"><strong>Buy Groceries</strong></h5>
-              <p class="card-text">
-                Buy groceries in woolies, coles and Aldi.
-                <br />
-                <br />
-                Due Date: 25/12/2020
-              </p>
-            </div>
-
-            <div class="card-footer">
-              <small class="text-muted"
-                >Vino-Done
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
-          </div>
-          <div class="card mx-2 my-2" style="width: 14rem">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Piano Lessons</strong></h5>
-              <p class="card-text">
-                Planning to go piano lessons on weekends.
-                <br />
-                <br />
-                Due Date: 30/11/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh-Review
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
-          </div>
-
-          <div class="card mx-2 my-2" style="width: 14rem">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Go to Gym</strong></h5>
-              <p class="card-text">
-                Start gym at 3pm and workout for 1 hour.
-                <br />
-                <br />
-                Due Date: 02/12/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh-To Do
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
-          </div>
-
-          <div class="card mx-2 my-2" style="width: 14rem">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Pay Rent</strong></h5>
-              <p class="card-text">
-                Have to pay rent before next wednesday.
-                <br />
-                <br />
-                Due Date: 01/12/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh-To Do
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
-          </div> -->
+          
         </div>
       </div>
       <!-- EDIT Modal Task start -->
@@ -400,7 +306,6 @@
               <button type="reset" class="btn btn-primary" data-dismiss="modal">
                 Reset
               </button>
-
             </div>
           </div>
         </div>
@@ -424,22 +329,18 @@
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
+     src="https://code.jquery.com/jquery-3.5.1.min.js"
+     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+     crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-<<<<<<< HEAD
+
+  
+
     <script src="js/taskmanager.js"></script>
-||||||| merged common ancestors
-=======
-
->>>>>>> 998f3cae6eb672abbdad7fc49ec2272d1dcf2978
     <script src="js/index.js"></script>
-
   </body>
 </html>

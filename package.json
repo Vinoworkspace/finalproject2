@@ -1,0 +1,26 @@
+{
+  "name": "finalproject2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  },
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vinoworkspace/finalproject2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vinoworkspace/finalproject2/issues"
+  },
+  "homepage": "https://github.com/Vinoworkspace/finalproject2#readme"
+}

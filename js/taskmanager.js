@@ -14,32 +14,30 @@ class TaskManager {
     };
     this.tasks.push(task);
   }
-  // render() {
-  //   const tasksHtmlList = [];
 
-  //   const addDiv = document.querySelector("#addTaskDiv");
-  //   for (let i = 0; i < this.tasks.length; i++) {
-  //     const taskHtml = addTaskHtml(
-  //       this.tasks[i].id,
-  //       this.tasks[i].name,
-  //       this.tasks[i].description,
-  //       this.tasks[i].assignedTo,
-  //       this.tasks[i].dueDate,
-  //       this.tasks[i].status
-  //     );
-  //     const taskHtml = addTaskHtml(
-  //       task.id,
-  //       task.taskName,
-  //       task.description,
-  //       task.assignedTo,
-  //       task.date,
-  //       task.updateStatus
-  //     );
-  //     tasksHtmlList.push(taskHtml);
-  //   }
-  //   const tasksHtml = tasksHtmlList.join("\n");
-  //   addDiv.innerHTML += taskHtml;
-  // }
+  // Create the deleteTask method
+  deleteTask(taskId) {
+    // Create an empty array and store it in a new variable, newTasks
+    const newTasks = [];
+    console.log( `taskId: ${taskId}`  );
+
+    // Loop over the tasks
+    for (let i = 0; i < this.tasks.length; i++) {
+      // Get the current task in the loop
+      const task = this.tasks[i];
+
+      // Check if the task id is not the task id passed in as a parameter
+      if (task.id !== taskId) {
+        // Push the task to the newTasks array
+        newTasks.push(task);
+      }
+    }
+
+    // Set this.tasks to newTasks
+    this.tasks = newTasks;
+    console.log(this.tasks);
+  }
+
   getTaskById(taskId) {
     // Create a variable to store the found task
     let foundTask;
@@ -48,7 +46,7 @@ class TaskManager {
     for (let i = 0; i < this.tasks.length; i++) {
       // Get the current task in the loop
       const task = this.tasks[i];
-      console.log("task.id: " +typeof task.id)
+      console.log("task.id: " + typeof task.id);
 
       // Check if its the right task by comparing the task's id to the id passed as a parameter
       if (task.id === taskId) {
@@ -73,7 +71,14 @@ class TaskManager {
       const formattedDate =
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
       // Create the task html
-      const taskHtml = addTaskHtml(task.id, task.name,task.description,task.assignedTo,formattedDate, task.status);
+      const taskHtml = addTaskHtml(
+        task.id,
+        task.name,
+        task.description,
+        task.assignedTo,
+        formattedDate,
+        task.status
+      );
 
       // Pass the task id as a parameter
       //  taskHtml = addTaskHtml(task.id, task.name, task.description, task.assignedTo, formattedDate, task.status);
@@ -89,7 +94,45 @@ class TaskManager {
     const tasksList = document.querySelector("#taskList");
     tasksList.innerHTML = tasksHtml;
   }
+
+  // Create the save method
+  save() {
+    // Create a JSON string of the tasks
+    const tasksJson = JSON.stringify(this.tasks);
+
+    // Store the JSON string in localStorage
+    localStorage.setItem("tasks", tasksJson);
+
+    // Convert the currentId to a string;
+    const currentId = String(this.currentId);
+
+    // Store the currentId in localStorage
+    localStorage.setItem("currentId", currentId);
+  }
+
+  // Create the load method
+  load() {
+    // Check if any tasks are saved in localStorage
+    if (localStorage.getItem("tasks")) {
+      // Get the JSON string of tasks in localStorage
+      const tasksJson = localStorage.getItem("tasks");
+
+      // Convert it to an array and store it in our TaskManager
+      this.tasks = JSON.parse(tasksJson);
+    }
+
+    // Check if the currentId is saved in localStorage
+    if (localStorage.getItem("currentId")) {
+      // Get the currentId string in localStorage
+      const currentId = localStorage.getItem("currentId");
+
+      // Convert the currentId to a number and store it in our TaskManager
+      this.currentId = Number(currentId);
+    }
+  }
 }
+
+// module.exports = TaskManager;
 
 const addTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
   // console.log("name: "+ name ) ;
@@ -100,7 +143,7 @@ const addTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
   // console.log("id: "+ id ) ;
 
   return `<li class="list-group-item" data-task-id="${id}">
-          <div class="card mx-2 my-2" style="width: 14rem">
+          <div class="card border" style="width: 14rem">
              <div class="card-body">
               <h5 class="card-title"><strong>${name}</strong></h5>
                
@@ -117,6 +160,9 @@ const addTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
                      -<span class="badge ${
                        status === "TODO" ? "badge-danger" : "badge-success"
                      }">${status}</span>
+
+                     <br>
+                     </br>
                    
                 <button
                   class="btn btn-primary btn-sm"
@@ -126,17 +172,20 @@ const addTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
                 >
                   Edit
                 </button>
-                <button class="btn btn-danger btn-sm" type="button">
+                <button class="btn btn-danger delete-button" type="button" " value = "${id}">
                   Delete
                 </button>
               </small>
               <br>
               <br>
               <div class="d-flex w-90 justify-content-end">
-                <button class="btn btn-outline-success done-button ${ status === "TODO" ? "visible" : "invisible"}" value = "${id}">Mark As Done</button> 
+                <button class="btn btn-outline-success done-button ${
+                  status === "TODO" ? "visible" : "invisible"
+                }" value = "${id}">Mark As Done</button> 
               </div>
             </div>
           </div>
       </li>
  `;
 };
+module.exports = TaskManager;
