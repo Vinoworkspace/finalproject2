@@ -1,22 +1,27 @@
+
 $.getJSON("https://api.openweathermap.org/data/2.5/find?q=Sydney&units=metric&appid=3d89b002aa44bca911b43860f8111858",
   function (data) {
     console.log(data);
-    var icon = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png";
+
+    var icon = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png"; 
+
     // console.log(icon);
     var temp = Math.floor(data.list[0].main.temp);
     var weather = data.list[0].main;
+
     $(".icon").attr("src", icon);
     $(".weather").append(weather);
     $(".temp").append(temp);
   }
 );
+
 //Validate
 const taskManager = new TaskManager(0);
 
 // Load the tasks from localStorage
 taskManager.load();
 
-
+// Render the tasks to the page
 taskManager.render();
 
 const addNewTaskForm = document.querySelector("#addNewTaskForm");
@@ -83,40 +88,37 @@ addNewTaskForm.addEventListener("submit", (event) => {
     errorMessageDate.style.display = "none";
   }
 
-if (
-  validFormFieldInput(taskName) &&
-  validFormFieldInput(description) &&
-  validFormFieldInput(assignedTo) &&
-  validFormFieldInput(date) 
-) {
-  taskManager.addNewTask(taskName, description, assignedTo, date, status);
-  //render task
+  if (
+    validFormFieldInput(taskName) &&
+    validFormFieldInput(description) &&
+    validFormFieldInput(assignedTo) &&
+    validFormFieldInput(date)
+  ) {
+    taskManager.addNewTask(taskName, description, assignedTo, date, status);
 
-  // Save the tasks to localStorage
-  taskManager.save();
+    // Save the tasks to localStorage
+    taskManager.save();
 
-  taskManager.render();
+    //render task
+    taskManager.render();
 
-  addTaskName.value = "";
-  addDescription.value = "";
-  taskAssigned.value = "";
-  addDate.value = "";
-  addStatus.value = "";
-  // // console.log(tasks);
-} 
-
-  
-
- 
+    addTaskName.value = "";
+    addDescription.value = "";
+    taskAssigned.value = "";
+    addDate.value = "";
+    addStatus.value = "";
+    // // console.log(tasks);
+  }
 });
 const tasksList = document.querySelector("#taskList");
 
 // Add an 'onclick' event listener to the Tasks List
 tasksList.addEventListener("click", (event) => {
   // Check if a "Mark As Done" button was clicked
+  console.log(event.target)
   if (event.target.classList.contains("done-button")) {
     // Get the parent Task
-    const parentTask = event.target.parentElement.parentElement;
+    // const parentTask = event.target.parentElement.parentElement;
     const markDoneButton = event.target;
 
     // Get the taskId of the parent Task.
@@ -138,18 +140,18 @@ tasksList.addEventListener("click", (event) => {
 
   // Check if a "Delete" button was clicked
   if (event.target.classList.contains("delete-button")) {
-      console.log("delete-button");
+    console.log("delete-button");
     // Get the parent Task
-    const deleteButton = event.target;
-
+    // const parentTask = event.target.parentElement.parentElement;
+     const deleteButton = event.target;
     // Get the taskId of the parent Task.
+    // const taskId = parentTask.dataset.taskId;
     const taskId = Number(deleteButton.value);
 
     console.log(`taskId: ${taskId}`);
-
     // Delete the task
     taskManager.deleteTask(taskId);
-
+    
     // Save the tasks to localStorage
     taskManager.save();
 
@@ -157,24 +159,7 @@ tasksList.addEventListener("click", (event) => {
     taskManager.render();
   }
 
-  // // Check if a "Delete" button was clicked
-  // if (event.target.classList.contains("delete-button")) {
-  //   console.log("delete-button");
-  //   // Get the parent Task
-  //   // const parentTask = event.target.parentElement.parentElement;
-
-  //   // Get the taskId of the parent Task.
-  //   const taskId = Number(parentTask.dataset.taskId);
-
-  //   // Delete the task
-  //   taskManager.deleteTask(taskId);
-
-  //   // Save the tasks to localStorage
-  //   taskManager.save();
-
-  //   // Render the tasks
-  //   taskManager.render();
-  // }
+  
 });
 
 function validFormFieldInput(data) {

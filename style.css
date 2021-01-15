@@ -1,75 +1,4 @@
-/* body {
-  background-color: rgb(212, 231, 231);
-  font-size: 15px;
-  padding: 12px;
-  margin: 12px;
-}
-header {
-  text-align: center;
-}
-
-h1 {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 3em;
-  color: rgb(27, 25, 25);
-}
-
-.myadd {
-  margin: 1rem;
-}
-
-.mystatus {
-  width: auto;
-}
-
-
-.button1 {
-  float: right;
-  position: relative;
-  top: -70px;
-}
-ul {
-    
-    padding-left: 0;
-}
-
-ul#taskList li {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 0px;
-    border-radius: 20px;
-}
-
-.border {
-    border: 2px solid #dee2e6!important;
-    border-radius: 20px;
-  
-} */
-
-/* .btncolor1 { */
-  /* background-color: rgb(123, 255, 163); */
-  /* border-radius: 20px;
-} */
-
-/* .btncolor2 { */
-  /* background-color: lightcoral; */
-  /* border-radius: 20px;
-} */
-
-/* .cardlayout {
-  border-radius: 20px;
-} */
-/* .taskborder {
-  width: 50%;
-} */
-/* .boxassigned {
-  width: 50%;
-}
-.boxstatus {
-  width: 50%;
-} */
-/* Start Again */
-
+/* weather API */
 .weather-container {
   background: rgba(231, 142, 26, 0.5);
   text-align: center;
@@ -78,6 +7,7 @@ ul#taskList li {
   height: 410px;
   border-radius: 20px;
 }
+
 .weather {
   font-size: 22px;
   margin: 0;
@@ -88,14 +18,17 @@ ul#taskList li {
   font-weight: bold;
   color: white;
 }
+
 .img-syd {
   width: 100%;
   height: 70%;
   border-radius: 20px;
 }
+
 h2 {
   color: white;
 }
+
 /* Front page layout */
 body {
   background-color: rgb(255, 255, 255);
@@ -106,52 +39,56 @@ body {
 header {
   text-align: center;
 }
+
 h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 5em;
   color: rgb(27, 25, 25);
 }
 /* end of front page layout */
+
 /* status drop down button  */
 .mystatus {
   width: auto;
   border-radius: 20px;
 }
 /* end of status drop down button */
+
 /* Add new task  front page  */
 .button1 {
   float: right;
   position: relative;
   top: -70px;
 }
+
 .myadd {
   margin: 1rem;
 }
 /* end of new task button front page */
-/* Task card styles */
-ul {
-  padding-left: 0;
+
+ul#taskList li {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0px;
 }
+
 ul#taskList li {
   display: inline-block;
   margin-right: 10px;
   padding: 0px;
+
   border-radius: 20px;
 }
+
 .border {
-  border: 2px solid #DEE2E6 !important;
+  border: 2px solid #dee2e6 !important;
   /* border-color: black; */
   border-radius: 20px;
 }
+
 .btn-color {
   background-color: rgba(60, 252, 34, 0.5);
   border-radius: 15px;
   border-color: transparent;
   margin-left: 10px;
-}
-body {
-  background-color: rgb(212, 231, 231);
-  font-size: 20px;
-  padding: 12px;
-  margin: 12px;
 }
