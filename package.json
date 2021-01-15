@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+{
+  "name": "finalproject2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  },
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vinoworkspace/finalproject2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vinoworkspace/finalproject2/issues"
+  },
+  "homepage": "https://github.com/Vinoworkspace/finalproject2#readme"
+}
+||||||| merged common ancestors
+=======
 {
   "name": "finalproject2",
   "version": "1.0.0",
@@ -23,3 +52,4 @@
     "mocha": "^8.2.1"
   }
 }
+>>>>>>> 9ed91067f5774f86d053f53b7cfc2aec8bc40e47

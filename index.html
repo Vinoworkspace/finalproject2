@@ -16,8 +16,6 @@
 
     <link rel="stylesheet" href="style.css" type="text/css" />
 
-
-
     <title>Task Planner</title>
   </head>
   <body>
@@ -57,7 +55,7 @@
 
         <button
           type="button"
-          class="btn btn-success"
+          class="btn-color"
           data-toggle="modal"
           data-target="#exampleModal"
         >
@@ -137,11 +135,9 @@
                     <small id="text" class="form-text text-muted"></small>
                   </div>
 
-
                   <div class="form-group">
                     <label for="taskStatus">Status</label>
                     <select class="form-control" id="taskStatus">
-
                       <option>To Do</option>
                       <option>In Progress</option>
                       <option>Done</option>
@@ -149,7 +145,6 @@
                     </select>
                   </div>
                   <div class="form-group">
-
                     <div
                       id="alertDateMessage"
                       style="display: none"
@@ -164,7 +159,6 @@
                       class="form-control"
                       id="addDate"
                       name="date"
-
                       placeholder="dd-mm-yyyy"
                       type="date"
                     />
@@ -175,23 +169,7 @@
                 </button>
               </form>
             </span>
-            <!-- <div class="modal-footer">
-
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Add
-              </button>
-              <button
-                type="reset"
-                class="btn btn-primary"
-                data-dismiss="modal"
-              >
-                Reset
-              </button>
-            </div> -->
+            
           </div>
         </div>
       </div>
@@ -209,12 +187,12 @@
                 Description
                 <br />
                 <br />
-                Due Date: ##/##/####
+                Due Date: ##/##/##
               </p>
             </div>
             <div class="card-footer">
               <small class="text-muted"
-                >Josh-Review
+                >Name-Status
                 <button
                   class="btn btn-primary btn-sm"
                   type="button"
@@ -223,101 +201,13 @@
                 >
                   Edit
                 </button>
-                <button class="btn btn-danger delete-button" type="button">Delete</button>
-              </small>
-            </div>
-          </div>
-          <!-- <div class="card mx-2 my-2" style="width: 14rem"> -->
-            <!-- <div class="card-body">
-              <h5 class="card-title"><strong>Buy Groceries</strong></h5>
-              <p class="card-text">
-                Buy groceries in woolies, coles and Aldi.
-                <br />
-                <br />
-                Due Date: 25/12/2020
-              </p>
-            </div>
-
-            <div class="card-footer">
-              <small class="text-muted"
-                >Vino-Done
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
+                <button class="btn btn-danger delete-button" type="button">
                   Delete
                 </button>
               </small>
             </div>
           </div>
-          <div class="card mx-2 my-2" style="width: 14rem">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Piano Lessons</strong></h5>
-              <p class="card-text">
-                Planning to go piano lessons on weekends.
-                <br />
-                <br />
-                Due Date: 30/11/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh-Review
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
-          </div>
-
-          <div class="card mx-2 my-2" style="width: 14rem">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Go to Gym</strong></h5>
-              <p class="card-text">
-                Start gym at 3pm and workout for 1 hour.
-                <br />
-                <br />
-                Due Date: 02/12/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh-To Do
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
-          </div>
-
-          <div class="card mx-2 my-2" style="width: 14rem">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Pay Rent</strong></h5>
-              <p class="card-text">
-                Have to pay rent before next wednesday.
-                <br />
-                <br />
-                Due Date: 01/12/2020
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >Josh-To Do
-                <button class="btn btn-primary btn-sm" type="button">
-                  Edit
-                </button>
-                <button class="btn btn-danger btn-sm" type="button">
-                  Delete
-                </button>
-              </small>
-            </div>
-          </div> -->
+          
         </div>
       </div>
       <!-- EDIT Modal Task start -->
@@ -409,7 +299,6 @@
               <button type="reset" class="btn btn-primary" data-dismiss="modal">
                 Reset
               </button>
-
             </div>
           </div>
         </div>
@@ -444,6 +333,5 @@
 
     <script src="js/taskmanager.js"></script>
     <script src="js/index.js"></script>
-
   </body>
 </html>
