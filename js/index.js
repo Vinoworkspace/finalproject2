@@ -4,6 +4,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/find?q=Sydney&units=metric&ap
     console.log(data);
 
     var icon = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png"; 
+
     // console.log(icon);
     var temp = Math.floor(data.list[0].main.temp);
     var weather = data.list[0].main;
