@@ -3,6 +3,8 @@ class TaskManager {
     this.tasks = [];
     this.currentId = currentId;
   }
+
+  
   addNewTask(taskName, description, assignedTo, date) {
     const task = {
       id: this.currentId++,
@@ -142,6 +144,7 @@ const addTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
   // console.log("status: " + status) ;
   // console.log("id: "+ id ) ;
 
+  
   return `<li class="list-group-item" data-task-id="${id}">
           <div class="card border" style="width: 14rem">
              <div class="card-body">

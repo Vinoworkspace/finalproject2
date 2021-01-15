@@ -157,6 +157,8 @@ tasksList.addEventListener("click", (event) => {
     // Render the tasks
     taskManager.render();
   }
+
+  
 });
 
 function validFormFieldInput(data) {
