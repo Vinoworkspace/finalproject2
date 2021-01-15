@@ -1,7 +1,7 @@
-$.getJSON("http://api.openweathermap.org/data/2.5/find?q=Sydney&units=metric&appid=3d89b002aa44bca911b43860f8111858",
+$.getJSON("https://api.openweathermap.org/data/2.5/find?q=Sydney&units=metric&appid=3d89b002aa44bca911b43860f8111858",
   function (data) {
     console.log(data);
-    var icon = "http://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png";
+    var icon = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png";
     // console.log(icon);
     var temp = Math.floor(data.list[0].main.temp);
     var weather = data.list[0].main;
