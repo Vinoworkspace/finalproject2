@@ -178,6 +178,9 @@ const addTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
                      -<span class="badge ${
                        status === "TODO" ? "badge-danger" : "badge-success"
                      }">${status}</span>
+
+                     <br>
+                     </br>
                    
                 <button
                   class="btn btn-primary btn-sm"
@@ -204,4 +207,6 @@ const addTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
  `;
 };
 
-module.exports = TaskManager;
+if (typeof module != "undefined") {
+  module.exports = TaskManager;
+}
