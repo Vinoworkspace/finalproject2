@@ -92,3 +92,14 @@ ul#taskList li {
   border-color: transparent;
   margin-left: 10px;
 }
+
+.btn-sm {
+ height: 30px;
+ width:50px;
+}
+
+.delete-button {
+ height:30px
+
+}
+
