@@ -191,4 +191,6 @@ const addTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
       </li>
  `;
 };
-module.exports = TaskManager;
+if (typeof module != "undefined") {
+  module.exports = TaskManager;
+}
