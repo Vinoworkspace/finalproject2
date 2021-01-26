@@ -7,15 +7,15 @@ describe("testing TaskManager function",  () => {
    it("Add Task", () => {
        const taskManager = new TaskManager(0);
     
-     taskManager.addNewTask("shopping", "At Aldi", "Lavina", "24/01/2021");
+     taskManager.addNewTask("shopping", "At Aldi", "Vino", "24/01/2021");
      let len = taskManager.tasks.length;
      assert.strictEqual(len, 1);
    }) 
 
    it("Delete Task", () =>{
      const taskManager = new TaskManager(0);
-     taskManager.addNewTask("shopping", "At Aldi", "Lavina", "24/01/2021");
-     taskManager.addNewTask("shopping", "At Aldi", "Lavina", "24/01/2021");
+     taskManager.addNewTask("shopping", "At Aldi", "Vino", "24/01/2021");
+     taskManager.addNewTask("shopping", "At Kmart", "Josh", "28/01/2021");
      taskManager.deleteTask(0);
      let len = taskManager.tasks.length;
      assert.strictEqual(len,1);
@@ -24,7 +24,7 @@ describe("testing TaskManager function",  () => {
 
    it("Get task by id", () =>{
        const taskManager = new TaskManager(0);
-       newTask= taskManager.addNewTask("shopping", "At Aldi", "Lavina", "24/01/2021");
+       newTask= taskManager.addNewTask("shopping", "At Aldi", "Vino", "24/01/2021");
        expectedTask = taskManager.getTaskById(0);
        newTaskName = "shopping";
       
