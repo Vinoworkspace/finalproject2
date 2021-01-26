@@ -19,7 +19,10 @@ Tasks:
 2. Implemented wireframes using wireframes.
 3. Created task card layout and a task list component.Card layout contains task name, task description, assigned to, status and due date.
 4. Task name, task description, assigned to, status and due date are validated on form submission. And also a meaningful error message id  dispalyed when a form field is invalid.
-5. Added the new task. When adding a new task, the task id should be incremented and unique.
-6. Displayed the task information.
-
+5. Adding the new task. When adding a new task, the task id should be incremented and unique.
+6. Displaying the task information.
+7. Updating the task. 'Mark as Done' button was added to the task HTML ang by clicking the 'Mark as Done' the status turned as 'Done'.
+8. Persisting the data. The application loads any task stored on the local storage when the application first loads.
+9. Delete the task by clicking delete button and it deletes the task card.
+10. Testing - addTask, deleteTask and getTaskById.
 
